@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性控制div</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        #outer{width:500px;margin:0 auto;padding:0;text-align:center;}
+        #kong{width:100px;height:100px;background:black;margin:10px auto;display:block;}
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#kuan").click(function(){
+                $("#kong").css('width', '200px')
+            });
+            $("#gao").click(function(){
+                $("#kong").css('height', '200px')
+            });
+            $("#se").click(function(){
+                $("#kong").css('background', 'red')
+            });
+            $("#yin").click(function(){
+                $("#kong").css('display', 'none')
+            });
+            $("#chong").click(function(){
+                $("#kong").css('background', 'black').css('height', '100px').css('width', '100px').css('display', 'block')
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="outer">
+    <button id="kuan">变宽</button>
+    <button id="gao">变高</button>
+    <button id="se">变色</button>
+    <button id="yin">隐藏</button>
+    <button id="chong">重置</button>
+    <div id="kong"></div>
+    </div>
+</body> 
+</html>
