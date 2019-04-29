@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <title>Document</title>
+</head>
+    <style>
+    .bot{
+        display:flex;
+        flex-direction: row-reverse;
+        justify-content: center
+    }
+    </style>
+<body>
+<div class="bot">
+    <div>
+    <table border="3">
+        <tr style="Background:rgb(133, 175, 33)">
+        <th>分类</th>
+        <th>BMI标准</th>
+    </tr>
+    <tr style="Background:rgb(59, 238, 89)">
+        <th>偏瘦</th>
+        <th> <= 18.4</th>
+    </tr>
+    <tr style="Background:rgb(36, 197, 197)">
+        <th>正常</th>
+        <th>18.5 ~ 23.9</th>
+    </tr>
+    <tr style="Background:rgb(117, 94, 219)">
+        <th>过重</th>
+        <th>24.0 ~ 27.9</th>
+    </tr>
+    <tr style="Background:rgb(218, 59, 59)">
+        <th>肥胖</th>
+        <th>>= 28.0</th>
+    </tr>      
+    </table>
+</div>
+<div id="root">
+    <h1>计算你的身体质量指数(BMI)</h1>
+    <p>我的身高：</p>
+    <p><input v-model="sg">单位：米m</p>
+    <p>我的体重：</p>
+    <p><input v-model="tz">单位：千克kg</p>
+    <button @click="anjian">计算BMI</button>
+    <p>{{bmi}}</p>
+</div>
+    <script>
+    new Vue({
+        el:'#root',
+        data:{
+            sg:'',
+            tz:'',
+            bmi:''
+        },
+        methods:{
+            anjian:function(){
+                var [s,t]=[this.sg,this.tz]
+                var b=t/(s*s)
+                this.bmi='我的BMI指数：'+b.toFixed(2)
+            }
+        }
+    })
+    </script>
+</div>
+</body>
+</html>
