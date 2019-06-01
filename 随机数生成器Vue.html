@@ -35,6 +35,10 @@
             chufa:function(){
                 var [min,max,js]=[this.zuixiao,this.zuida,this.zongshu]
                 var num =new Set()
+                if(max-min+1<js){
+                    alert('生成数过多')
+                    js=-1
+                }
                 while(Array.from(num).length<js){
                 num.add(Number(Math.floor(Math.random()*(max-min+1)+min))+Number(min))
                 }
